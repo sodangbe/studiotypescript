@@ -5,10 +5,10 @@ export class Rocket implements Payload{
     // properties and methods
     massKg: number;
     name:string ;
-    totalCapacityKg :string;
+    totalCapacityKg : number;
     cargoItems: Cargo[] =[];
     astronauts: Astronaut[] = [];
-    constructor (name:string ,totalCapacityKg :string){
+    constructor (name:string ,totalCapacityKg :number){
         this.name= name;
         this.totalCapacityKg= totalCapacityKg;
     }
@@ -43,8 +43,10 @@ export class Rocket implements Payload{
     }
      
     canAdd(item: Payload) : boolean {
-
-     return   ((`${this.currentMassKg} + ${item.massKg}`) <= this.totalCapacityKg)? true:false;
+     
+        let num : number = item.massKg;
+     
+        return   ((+this.currentMassKg + num) <= this.totalCapacityKg)? true:false;
   
     }
 
