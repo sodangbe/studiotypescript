@@ -10,24 +10,24 @@ var Rocket = /** @class */ (function () {
     }
     Rocket.prototype.sumMass = function (items) {
         var sum = 0;
-        /*let sumAstronauts: number = 0
-                
-        for(let i: number = 0; i < this.cargoItems.length ; i++) {
+        //let sumAstronauts: number = 0
+        /*for(let i: number = 0; i < items.length ; i++) {
 
-            sumCargoItems += items[i].massKg;
-        }
-        // adding the mass of all astronauts
-        for(let i: number = 0; i < this.astronauts.length ; i++) {
-
-            sumAstronauts += items[i].massKg;
-        }
-
-        return (sumAstronauts + sumCargoItems);*/
-        items.forEach(function (item) { return sum += item.massKg; });
+            sum += items[i].massKg;
+            
+        }*/
+        // adding the mass of all astronauts 
+        // for(let i: number = 0; i < this.astronauts.length ; i++) {
+        //     sumAstronauts += items[i].massKg;
+        // }
+        // return (sumAstronauts + sumCargoItems);*/
+        items.forEach(function (item) { sum += item.massKg; });
+        //console.log(items);
         return sum;
     };
     Rocket.prototype.currentMassKg = function () {
         var totalMass = this.sumMass(this.astronauts) + this.sumMass(this.cargoItems);
+        console.log(this.astronauts);
         return totalMass;
     };
     Rocket.prototype.canAdd = function (item) {
