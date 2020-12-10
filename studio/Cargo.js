@@ -6,9 +6,6 @@ var Cargo = /** @class */ (function () {
         this.material = material;
         this.massKg = massKg;
     }
-    Cargo.prototype.getMass = function () {
-        return this.massKg;
-    };
     return Cargo;
 }());
 exports.Cargo = Cargo;

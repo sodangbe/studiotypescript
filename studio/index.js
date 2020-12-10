@@ -14,6 +14,7 @@ var astronauts = [
     new Astronaut_1.Astronaut(81, 'Sally'),
     new Astronaut_1.Astronaut(99, 'Charles')
 ];
+falcon9.astronauts = astronauts;
 for (var i = 0; i < astronauts.length; i++) {
     var astronaut = astronauts[i];
     var status_1 = '';
@@ -32,6 +33,7 @@ var cargo = [
     new Cargo_1.Cargo(541, "Food"),
     new Cargo_1.Cargo(2107.39, "Tesla Roadster"),
 ];
+falcon9.cargoItems = cargo;
 for (var i = 0; i < cargo.length; i++) {
     var c = cargo[i];
     var loaded = '';

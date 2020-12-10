@@ -7,9 +7,8 @@ export class Cargo implements Payload{
         this.material= material;
         this.massKg= massKg;
     }
-
-    getMass():number{
-
-        return this.massKg;
-    }
+    
+    //takes an array of cargoItems objects and return a payload array 
+   
+ 
  }

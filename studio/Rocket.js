@@ -3,32 +3,24 @@ exports.__esModule = true;
 exports.Rocket = void 0;
 var Rocket = /** @class */ (function () {
     function Rocket(name, totalCapacityKg) {
-        this.cargoItems = [];
-        this.astronauts = [];
         this.name = name;
         this.totalCapacityKg = totalCapacityKg;
     }
+    ;
     Rocket.prototype.sumMass = function (items) {
         var sum = 0;
-        //let sumAstronauts: number = 0
-        /*for(let i: number = 0; i < items.length ; i++) {
-
-            sum += items[i].massKg;
-            
-        }*/
-        // adding the mass of all astronauts 
-        // for(let i: number = 0; i < this.astronauts.length ; i++) {
-        //     sumAstronauts += items[i].massKg;
-        // }
-        // return (sumAstronauts + sumCargoItems);*/
-        items.forEach(function (item) { sum += item.massKg; });
-        //console.log(items);
-        return sum;
+        for (var prop in items) {
+            sum += items[prop].massKg;
+        }
+        return (sum);
     };
     Rocket.prototype.currentMassKg = function () {
-        var totalMass = this.sumMass(this.astronauts) + this.sumMass(this.cargoItems);
-        console.log(this.astronauts);
-        return totalMass;
+        var totalMassAstronauts = 0;
+        var totalMassCargoItems = 0;
+        (this.astronauts.length > 0) ? totalMassAstronauts = +this.sumMass(this.astronauts) : totalMassAstronauts = 0;
+        (this.cargoItems.length > 0) ? totalMassCargoItems = +this.sumMass(this.cargoItems) : totalMassCargoItems = 0;
+        console.log(totalMassCargoItems + totalMassAstronauts);
+        return totalMassCargoItems + totalMassAstronauts;
     };
     Rocket.prototype.canAdd = function (item) {
         var num = item.massKg;

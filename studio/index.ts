@@ -17,6 +17,9 @@ let astronauts: Astronaut[] = [
    new Astronaut(99, 'Charles')
 ];
 
+falcon9.astronauts = astronauts;
+
+
 for (let i = 0; i < astronauts.length; i++) {
    let astronaut = astronauts[i];
    let status = '';
@@ -35,6 +38,8 @@ let cargo: Cargo[] = [
    new Cargo(541, "Food"),
    new Cargo(2107.39, "Tesla Roadster"),
 ];
+
+falcon9.cargoItems = cargo;
 
 for (let i = 0; i < cargo.length; i++) {
    let c = cargo[i];

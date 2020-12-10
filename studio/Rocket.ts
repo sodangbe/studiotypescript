@@ -3,29 +3,42 @@ import { Cargo } from './Cargo';
 import { Astronaut } from './Astronaut';
 export class Rocket {
     // properties and methods
-    
+   
     name:string ;
     totalCapacityKg : number;
-    cargoItems: Cargo[] =[];
-    astronauts: Astronaut[] = [];
+    cargoItems: Cargo[];
+    astronauts: Astronaut[];
     constructor (name:string ,totalCapacityKg :number){
         this.name= name;
         this.totalCapacityKg= totalCapacityKg;
         
-    }
+    };
     
-    
-    sumMass( items : Payload[] ): number {
-                
-        let sum: number = 0
-    
+    sumMass( items: Payload[] ): number {
+      
+        let sum = 0;
+       
+        for (let prop in items) {
+          sum += items[prop].massKg;
+        }
+        
+        return (sum);
+        
     }
 
+  
     currentMassKg(): number{
-
-        let totalMass = this.sumMass(this.astronauts) + this.sumMass(this.cargoItems);
-        console.log(this.astronauts);
-        return totalMass;
+         
+        let totalMassAstronauts:number= 0;
+        let totalMassCargoItems:number= 0;
+         
+         (this.astronauts.length > 0 ) ? totalMassAstronauts =+ this.sumMass(this.astronauts) : totalMassAstronauts = 0 ;  
+         (this.cargoItems.length > 0 ) ? totalMassCargoItems =+ this.sumMass(this.cargoItems) : totalMassCargoItems = 0 ;  
+      
+        console.log(totalMassCargoItems + totalMassAstronauts);
+        
+        return totalMassCargoItems + totalMassAstronauts;
+        
     }
      
     canAdd(item: Payload) : boolean {
@@ -60,3 +73,4 @@ export class Rocket {
 
 
  }
+
