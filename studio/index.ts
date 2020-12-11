@@ -12,44 +12,29 @@ import { Rocket } from './Rocket';
 let falcon9: Rocket = new Rocket('Falcon 9', 7500);
 
 let astronauts: Astronaut[] = [
-   new Astronaut(75, 'Mae'),
-   new Astronaut(81, 'Sally'),
-   new Astronaut(99, 'Charles')
+  new Astronaut(75, 'Mae'),
+  new Astronaut(81, 'Sally'),
+  new Astronaut(99, 'Charles')
 ];
 
-falcon9.astronauts = astronauts;
-
-
-for (let i = 0; i < astronauts.length; i++) {
-   let astronaut = astronauts[i];
-   let status = '';
-   if (falcon9.addAstronaut(astronaut)) {
-      status = "On board";
-   } else {
-      status = "Not on board";
-   }
-   console.log(`${astronaut.name}: ${status}`);
+//falcon9.astronauts = astronauts;
+for (let i =0; i < astronauts.length; i++) {
+  let astronaut = astronauts[i];
+  console.log(astronaut.name, falcon9.addAstronaut(astronaut));
 }
 
 let cargo: Cargo[] = [
-   new Cargo(3107.39, "Satellite"),
-   new Cargo(1000.39, "Space Probe"),
-   new Cargo(753, "Water"),
-   new Cargo(541, "Food"),
-   new Cargo(2107.39, "Tesla Roadster"),
+  new Cargo(3107.39, "Satellite"),
+  new Cargo(1000.39, "Space Probe"),
+  new Cargo(753, "Water"),
+  new Cargo(541, "Food"),
+  new Cargo(2107.39, "Tesla Roadster"),
 ];
 
 //falcon9.cargoItems = cargo;
-
-for (let i = 0; i < cargo.length; i++) {
-   let c = cargo[i];
-   let loaded = '';
-   if (falcon9.addCargo(c)) {
-      loaded = "Loaded"
-   } else {
-      loaded = "Not loaded"
-   }
-   console.log(`${c.material}: ${loaded}`);
+for (let i =0; i < cargo.length; i++) {
+  let c = cargo[i];
+  console.log(c.material, falcon9.addCargo(c));
 }
 
-console.log(`Final cargo and astronaut mass: ${falcon9.currentMassKg()} kg.`);
+console.log('final cargo and astronaut weight:', falcon9.currentMassKg());
