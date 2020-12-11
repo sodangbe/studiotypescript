@@ -39,7 +39,7 @@ let cargo: Cargo[] = [
    new Cargo(2107.39, "Tesla Roadster"),
 ];
 
-falcon9.cargoItems = cargo;
+//falcon9.cargoItems = cargo;
 
 for (let i = 0; i < cargo.length; i++) {
    let c = cargo[i];
